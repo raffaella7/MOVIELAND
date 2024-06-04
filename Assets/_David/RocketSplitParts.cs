@@ -6,7 +6,8 @@ public class RocketSplitParts : MonoBehaviour
 {
     void Start()
     {
-        //Move apart each children(part) of the rocket
+        foreach (Transform child in transform)
+            print(child.name);
 
     }
 
