@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject OpenButton;
     [SerializeField] GameObject DetectedLevelObj;
     [SerializeField] TextMeshProUGUI DetectedLevelText;
-    [SerializeField] TextMeshProUGUI OpenButtonText;
 
     void Awake()
     {
