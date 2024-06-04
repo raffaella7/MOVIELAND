@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class TypewriterEffect : MonoBehaviour
 {
-    public Text uiText;  // rif al Text dell'UI
+    [SerializeField] public TMP_Text uiText;  // rif al Text dell'UI
     public float delay = 0.1f;  // delay tra una lettera e l'altra
 
     private string fullText;  // testo completo che vediamo
