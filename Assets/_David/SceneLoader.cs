@@ -9,9 +9,10 @@ using System;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string sceneName;
+    string sceneName;
     ARTrackedImageManager trackedImageManager;
     [SerializeField] GameObject OpenButton;
+    [SerializeField] GameObject DetectedLevelText;
     [SerializeField] TextMeshProUGUI OpenButtonText;
 
     void Awake()
@@ -26,7 +27,7 @@ public class SceneLoader : MonoBehaviour
         {
             sceneName = trackedImage.referenceImage.name;
             OpenButton.SetActive(true);
-            OpenButtonText.text = "Open " + sceneName;
+            OpenButtonText.text = sceneName;
             Debug.Log(sceneName);
         }
     }
