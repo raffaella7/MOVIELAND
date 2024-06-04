@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "MOVIELAND.sln"
+    "dotnet.defaultSolution": "MOVIELAND.sln",
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
 }
