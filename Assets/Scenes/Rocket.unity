@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: -6450531288451488381, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.231
+      value: 2.0888
       objectReference: {fileID: 0}
     - target: {fileID: -4640693346493510261, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 4861720715339896025, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.049
+      value: 1.9874998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -644,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289.05438, y: -966.2953}
+  m_AnchoredPosition: {x: -288.00003, y: -898}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692609196
@@ -667,7 +667,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTO E' IL TESTO
+  m_text: Welcome to space mission in orbit. You will be able to interact with the
+    ROCKET and learn about the various functions of each piece.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 779445d8d1bef1548954f91e290ec81c, type: 2}
   m_sharedMaterial: {fileID: -8760026420706895359, guid: 779445d8d1bef1548954f91e290ec81c,
@@ -695,19 +696,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 47.21
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -731,7 +732,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -592.50586, w: -348.09058}
+  m_margin: {x: -307.65295, y: 129.60626, z: -868.6506, w: -410.74307}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
