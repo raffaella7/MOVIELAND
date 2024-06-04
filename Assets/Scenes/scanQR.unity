@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 1604313955}
   - component: {fileID: 1604313954}
   m_Layer: 5
-  m_Name: Level Detected
+  m_Name: Level Detected_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
