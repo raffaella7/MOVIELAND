@@ -181,8 +181,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Map
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0385ebe544b00c6459d3d5a20ac8fba3, type: 2}
+  m_sharedMaterial: {fileID: -3983238371423265382, guid: 0385ebe544b00c6459d3d5a20ac8fba3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -359,7 +360,7 @@ RectTransform:
   m_GameObject: {fileID: 130951125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.096, y: 2.096, z: 2.096}
+  m_LocalScale: {x: 2.670304, y: 2.670304, z: 2.670304}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1777493617}
@@ -864,8 +865,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Movieland Story
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0385ebe544b00c6459d3d5a20ac8fba3, type: 2}
+  m_sharedMaterial: {fileID: -3983238371423265382, guid: 0385ebe544b00c6459d3d5a20ac8fba3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -889,8 +891,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1104,8 +1106,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Scan QR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0385ebe544b00c6459d3d5a20ac8fba3, type: 2}
+  m_sharedMaterial: {fileID: -3983238371423265382, guid: 0385ebe544b00c6459d3d5a20ac8fba3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1129,8 +1132,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
-  m_fontSizeBase: 19
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1207,7 +1210,7 @@ RectTransform:
   m_GameObject: {fileID: 1960483951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4926, y: 3.4926, z: 3.4926}
+  m_LocalScale: {x: 4.532783, y: 4.532783, z: 4.532783}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 48034671}
@@ -1328,7 +1331,7 @@ RectTransform:
   m_GameObject: {fileID: 2020068340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4926, y: 3.4926, z: 3.4926}
+  m_LocalScale: {x: 4.480307, y: 4.480307, z: 4.480307}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 745735364}
