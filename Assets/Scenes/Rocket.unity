@@ -148,12 +148,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 321
+      value: 480
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 523904aa47ffddf4f9f284ffb98febc4,
         type: 3}
@@ -203,8 +203,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 523904aa47ffddf4f9f284ffb98febc4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13716123}
   m_SourcePrefab: {fileID: 100100000, guid: 523904aa47ffddf4f9f284ffb98febc4, type: 3}
+--- !u!1 &13716122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 523904aa47ffddf4f9f284ffb98febc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 13716121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &13716123
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13716122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c9dc03558d89044a8d850b2fe71f926, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &692609194
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,13 +713,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592828411}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12474155, y: -0, z: -0, w: 0.9921893}
-  m_LocalPosition: {x: -11, y: 866, z: 0}
+  m_LocalRotation: {x: 0.053172875, y: -0, z: -0, w: 0.99858534}
+  m_LocalPosition: {x: 0, y: 795.4, z: 85.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 14.332, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.096, y: 0, z: 0}
 --- !u!1 &2116302065
 GameObject:
   m_ObjectHideFlags: 0
