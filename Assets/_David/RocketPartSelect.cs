@@ -11,6 +11,8 @@ public class RocketPartSelect : MonoBehaviour
     public Camera mainCamera;
     [SerializeField] GameObject Rocket;
     bool isTouchingPart = false;
+    Vector3 partStartPosition;
+    GameObject selectedPart;
 
 
     void Awake()
@@ -41,6 +43,8 @@ public class RocketPartSelect : MonoBehaviour
                 if (tags.Contains(hit.collider.gameObject.tag))
                 {
                     isTouchingPart = true;
+                    partStartPosition = hit.collider.gameObject.transform.position;
+                    selectedPart = hit.collider.gameObject;
                     for (int i = 0; i < Rocket.transform.childCount; i++)
                     {
                         if (hit.collider.gameObject != Rocket.transform.GetChild(i).gameObject)
@@ -48,6 +52,7 @@ public class RocketPartSelect : MonoBehaviour
                             Rocket.transform.GetChild(i).gameObject.SetActive(false);
                         }
                     }
+                    hit.collider.gameObject.transform.position = new Vector3((float)0.00318461633, (float)1.29499996, (float)-2.52900004);
                 }
             }
         }
@@ -58,6 +63,7 @@ public class RocketPartSelect : MonoBehaviour
             {
                 Rocket.transform.GetChild(i).gameObject.SetActive(true);
             }
+            selectedPart.transform.position = partStartPosition;
         }
 
     }
