@@ -13,10 +13,11 @@ public class RocketPartSelect : MonoBehaviour
     public Camera mainCamera;
     [SerializeField] GameObject Rocket;
     bool isTouchingPart = false;
-    Vector3 partStartPosition;
     GameObject selectedPart;
-    [SerializeField] List<GameObject> rocketParts = new();
-    Dictionary<string, Vector3> tags_pos = new();
+    public PartText selectedPartText;
+
+    [SerializeField] public List<GameObject> rocketParts = new();
+    public Dictionary<string, Vector3> tags_pos = new();
     Dictionary<string, Vector3> parts_camera_pos = new Dictionary<string, Vector3>() {
         { "Fairing", new Vector3(0.00013480644f,1.11699998f,-2.43199992f) },
         { "Hub", new Vector3(0.000971867994f,1.17700005f,-2.66400003f) },
@@ -32,10 +33,10 @@ public class RocketPartSelect : MonoBehaviour
 
     void Start()
     {
-        foreach (var part in rocketParts)
-        {
-            tags_pos.Add(part.tag, part.transform.localPosition);
-        }
+        // foreach (var part in rocketParts)
+        // {
+        //     tags_pos.Add(part.tag, part.transform.localPosition);
+        // }
     }
 
     void Update()
@@ -46,12 +47,15 @@ public class RocketPartSelect : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.GetTouch(0).position);
         if (Input.GetTouch(0).phase == TouchPhase.Began)
         {
+            // print(tags_pos.Count);
             if (Physics.Raycast(ray, out RaycastHit hit, 1000000))
             {
                 if (tags_pos.ContainsKey(hit.collider.gameObject.tag))
                 {
                     isTouchingPart = true;
                     selectedPart = hit.collider.gameObject;
+                    selectedPartText = selectedPart.GetComponent<PartText>();
+                    // print(selectedPart);
                     for (int i = 0; i < Rocket.transform.childCount; i++)
                     {
                         if (hit.collider.gameObject != Rocket.transform.GetChild(i).gameObject.transform.GetChild(0).gameObject)
@@ -60,6 +64,7 @@ public class RocketPartSelect : MonoBehaviour
                     }
                     parts_camera_pos.TryGetValue(selectedPart.tag, out Vector3 value);
                     selectedPart.transform.localPosition = value;
+                    selectedPartText.Text.SetActive(true);
                 }
             }
             else
@@ -69,6 +74,7 @@ public class RocketPartSelect : MonoBehaviour
                     Rocket.transform.GetChild(i).gameObject.SetActive(true);
                 tags_pos.TryGetValue(selectedPart.tag, out Vector3 value);
                 selectedPart.transform.localPosition = value;
+                selectedPartText.Text.SetActive(false);
             }
 
         }
