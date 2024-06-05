@@ -30,15 +30,6 @@ public class RocketPartSelect : MonoBehaviour
         { "TopMain", new Vector3(-0.0565884896f,1.61899996f,-2.36800003f) },
     };
 
-
-    void Start()
-    {
-        // foreach (var part in rocketParts)
-        // {
-        //     tags_pos.Add(part.tag, part.transform.localPosition);
-        // }
-    }
-
     void Update()
     {
         if (Input.touchCount == 0)
