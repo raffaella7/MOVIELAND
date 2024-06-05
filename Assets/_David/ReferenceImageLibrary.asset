@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5473607218423674601
+  m_GuidHigh: 5948237891347092608
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5746217811788556754
+      m_GuidHigh: 8319466229768251791
+    m_SerializedTextureGuid:
+      m_GuidLow: 7693543838600277259
+      m_GuidHigh: 980196409410253179
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Rocket
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5455786798301711561
+      m_GuidHigh: 2554269596572132247
+    m_SerializedTextureGuid:
+      m_GuidLow: 6004574397856537144
+      m_GuidHigh: 6775392112724262842
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Race
+    m_Texture: {fileID: 0}

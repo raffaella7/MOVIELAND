@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fairing
+  - Hub
+  - LowMain
+  - SecondStage
+  - StageSep1
+  - StageSep2
+  - ThirdStager
+  - Thruster
+  - TopMain
   layers:
   - Default
   - TransparentFX
