@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 178039829}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 178039831}
 --- !u!114 &178039829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 500949856}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 178039831}
 --- !u!114 &500949856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 667257306}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 667257308}
 --- !u!114 &667257306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 1406122536}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1406122538}
 --- !u!114 &1406122536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,7 +3291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 1694881619}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1694881621}
 --- !u!114 &1694881619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3691,7 +3691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 1784411316}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1784411318}
 --- !u!114 &1784411316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,7 +4123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 2070905703}
   delay: 0.1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2070905705}
 --- !u!114 &2070905703
 MonoBehaviour:
   m_ObjectHideFlags: 0
