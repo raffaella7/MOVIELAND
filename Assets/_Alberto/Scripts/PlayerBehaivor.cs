@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class PlayerBehaivor : MonoBehaviour
 {
-    private GameObject player;
-    public int currentLane; 
-    void Awake()
-    {
-       player= FindAnyObjectByType<GameObject>(); 
+    Animator animator;
+    private int currentLane = 1; 
+    void Awake(){
+        animator=GetComponent<Animator>();
     }
-
     public void Left()
     {
         currentLane--;
+        animator.SetInteger("CurrentLane",currentLane);
         currentLane = Mathf.Clamp(currentLane,0,2);
+        print(currentLane);
     }
     public void Right()
     {
         currentLane++;
+        animator.SetInteger("CurrentLane",currentLane);
         currentLane = Mathf.Clamp(currentLane,0,2);
+        print(currentLane);
     }
     
 }
