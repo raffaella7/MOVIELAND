@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBehaivor : MonoBehaviour
 {
     private GameObject player;
-    private int currentLane; 
+    public int currentLane; 
     void Awake()
     {
        player= FindAnyObjectByType<GameObject>(); 
