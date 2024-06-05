@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlanetsRotation : MonoBehaviour
 {
-    float speed = 0.5f;
+    [SerializeField] public float speed = 0.5f;
     void Update()
     {
         transform.RotateAround(Vector3.zero, Vector3.up, speed * Time.deltaTime);
