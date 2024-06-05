@@ -16,6 +16,7 @@ public class RotateAll : MonoBehaviour
     [SerializeField] GameObject refCamera;
     [SerializeField] Animator animatorController;
     [SerializeField] GameObject raycastManager;
+    [SerializeField] GameObject firstText;
 
     void Awake()
     {
@@ -25,7 +26,7 @@ public class RotateAll : MonoBehaviour
     {
         StartCoroutine(RotateAllParts());
         StartCoroutine(ScaleRocket());
-        PlaySplitAnimation();
+        StartCoroutine(PlaySplitAnimation());
         rocket.transform.localScale = new Vector3(0, 0, 0);
 
     }
@@ -72,12 +73,20 @@ public class RotateAll : MonoBehaviour
     {
         yield return new WaitForSeconds(StartScaleDelay + StartRotationDelay);
         rocketPartSelect.enabled = true;
+        firstText.SetActive(false);
         isSlowRotating = true;
     }
 
-    void PlaySplitAnimation()
+    IEnumerator PlaySplitAnimation()
     {
         animatorController.Play("Split");
+        yield return new WaitForSeconds(21f);
+        foreach (var part in rocketPartSelect.rocketParts)
+        {
+            rocketPartSelect.tags_pos.Add(part.tag, part.transform.localPosition);
+        }
+
+
     }
 
 
