@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnvObjectSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameManager gameManager;
+
+    void Awake()
     {
-        
+        gameManager=FindAnyObjectByType<GameManager>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
