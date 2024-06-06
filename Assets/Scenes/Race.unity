@@ -122,37 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &107424953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 107424954}
-  m_Layer: 0
-  m_Name: SpawnManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &107424954
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107424953}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019494541, y: 3.3640397, z: -7.5302343}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133230202
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,14 +940,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 5339899532347882121, guid: 0ae7c52ec963e3c46b75b6c05c107b7c, type: 3}
-  - {fileID: 7098045290211091195, guid: b3d96191160da004e82a8410fb41aed5, type: 3}
-  coinPrefabs:
-  - {fileID: 8294490201146695774, guid: 66b825e5208708247a05442c0917a393, type: 3}
+  - {fileID: 3641202293772446373, guid: 3969bde28b8614146b244dc9027844eb, type: 3}
+  - {fileID: 1884496740575724201, guid: 8b38bcf649e16584785be2672fc0fc06, type: 3}
+  - {fileID: 8844215406738491553, guid: 9a08b37a65ee6c049af6be87ad2ecc6f, type: 3}
+  - {fileID: 4964204672328572169, guid: 9dcc1385d8fee4e459f94766ee38fcf5, type: 3}
+  - {fileID: 8053649937076149232, guid: 89a8ea523f9b3ed469d4e6c2320860bc, type: 3}
+  - {fileID: 8297891654754169069, guid: 21bc43191880bb043ac810078621d532, type: 3}
   spawnPoint: {fileID: 1478106393}
   minDelay: 1
-  maxDelay: 3
-  objectLifetime: 5
+  maxDelay: 2
 --- !u!65 &1478106390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1059,7 +1029,7 @@ Transform:
   m_GameObject: {fileID: 1478106388}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.54, y: 0.22916487, z: 17.62}
+  m_LocalPosition: {x: 0.005, y: 0.22916487, z: 17.62}
   m_LocalScale: {x: 0.44315, y: 0.44315, z: 0.44315}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1690,5 +1660,4 @@ SceneRoots:
   - {fileID: 133230206}
   - {fileID: 187655277}
   - {fileID: 1436968155}
-  - {fileID: 107424954}
   - {fileID: 1478106393}
