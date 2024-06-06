@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GameOver : MonoBehaviour
     {
         gameManager.isGameOver = true;
         gameOverUI.SetActive(true);
-        ScoreText.text = $"M: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
+        ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
         inputManager.gameObject.SetActive(false);
     }
 }
