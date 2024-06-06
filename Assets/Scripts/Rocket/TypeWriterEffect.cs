@@ -8,7 +8,7 @@ public class TypeWriterEffect : MonoBehaviour
     [SerializeField] public TMP_Text uiText;  // riferimento al Text dell'UI
     public float delay = 0.1f;  // delay tra una lettera e l'altra
 
-    private string fullText;  // testo completo che vediamo
+    public string fullText;  // testo completo che vediamo
     private string currentText = "";  // testo che sto vedendo adesso
 
     void Start()
