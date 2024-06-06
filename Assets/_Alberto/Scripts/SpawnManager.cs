@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -21,6 +22,8 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnFrequency = 10f;
 
+    private int spawnObjectNull = 6;
+
     void Awake()
     {
         // Trova il GameManager nella scena
@@ -30,7 +33,6 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-
         // StartCoroutine(SpawnRandom());
     }
 
@@ -42,6 +44,29 @@ public class SpawnManager : MonoBehaviour
             nextSpawnAtMeters += spawnFrequency;       //aggiungo 10 metri
         }
     }
+
+
+    void SpawnPrefab(GameObject[] prefabs)
+    {
+
+        int spawnChance = Random.Range(0, 10);   //
+        print("NUMERO NULLO");
+
+        // Se il numero casuale è 6, non fare nulla
+        if (spawnChance >= spawnObjectNull)     //se il nmero che esce è uguale a spawnobject null allora non fare niente se no spawna prefab
+        {
+            return;
+        }
+
+
+
+
+        int randomIndex = Random.Range(0, prefabs.Length);
+
+        // spawna il prefab
+        GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
+    }
+
 
 
     // IEnumerator SpawnRandom()
@@ -63,14 +88,5 @@ public class SpawnManager : MonoBehaviour
     //         }
     //     }
     // }
-
-    void SpawnPrefab(GameObject[] prefabs)
-    {
-        // prendo casualmente un prefab dall'array
-        int randomIndex = Random.Range(0, prefabs.Length);
-
-        // spawna il prefab
-        GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
-    }
 
 }
