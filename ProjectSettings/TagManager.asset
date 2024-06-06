@@ -13,6 +13,9 @@ TagManager:
   - ThirdStager
   - Thruster
   - TopMain
+  - TrackingObject
+  - Actors
+  - Grabbable
   layers:
   - Default
   - TransparentFX

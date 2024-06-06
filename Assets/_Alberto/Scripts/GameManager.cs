@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Vector3 MovementDirection = new Vector3(0,0,-1);
-    public float Speed =10;
+    public Vector3 MovementDirection = new Vector3(0, 0, -1);
+    public float Speed = 10;
     private float increasingSpeed = 0.5f;
+    public float totalMeters;
 
-    void Update(){
+    void Update()
+    {
         IncreaseDifficulty();
     }
 
-    private void IncreaseDifficulty(){
-        Speed += increasingSpeed*Time.deltaTime;
+    private void IncreaseDifficulty()
+    {
+        Speed += increasingSpeed * Time.deltaTime;
     }
 
 }
