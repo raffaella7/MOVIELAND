@@ -21,15 +21,16 @@ public class StreetMovement : MonoBehaviour
     }
     private void Movement()
     {
-        transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
-        Progress += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
-        gameManager.totalMeters += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
-        print(Progress);
-        print(gameManager.totalMeters);
-        if (Progress <= MaxPosition)
+        if (gameManager.isGameStarted)
         {
-            transform.position = StartPosition;
-            Progress = 0;
+            transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
+            Progress += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
+            gameManager.totalMeters += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
+            if (Progress <= MaxPosition)
+            {
+                transform.position = StartPosition;
+                Progress = 0;
+            }
         }
     }
 }
