@@ -11,8 +11,6 @@ public class TypeWriterEffect : MonoBehaviour
     private string fullText;  // testo completo che vediamo
     private string currentText = "";  // testo che sto vedendo adesso
 
-    [SerializeField] AudioSource audioSource;
-
     void Start()
     {
         fullText = uiText.text; // testo completo
@@ -21,24 +19,12 @@ public class TypeWriterEffect : MonoBehaviour
 
     IEnumerator ShowText()
     {
-        // Inizia a riprodurre il suono
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-
         for (int i = 0; i <= fullText.Length; i++)  // ciclo dalla prima lettera fino alla lunghezza del testo completo
         {
             currentText = fullText.Substring(0, i); // estraggo una sottostringa del testo completo, ovvero da 0 all'indice i
             uiText.text = currentText;  // aggiorno il testo visualizzato con la sottostringa di quel momento
 
             yield return new WaitForSeconds(delay);  // aspetto per il delay prima di vedere la prossima lettera
-        }
-
-        // Ferma la riproduzione del suono
-        if (audioSource != null)
-        {
-            audioSource.Stop();
         }
     }
 }
