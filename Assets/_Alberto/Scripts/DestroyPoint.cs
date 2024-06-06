@@ -8,11 +8,12 @@ public class DestroyPoint : MonoBehaviour
     void Awake()
     {
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.GetComponent<InfiniteMovement>())
+        print("collisione");
+        if (other.gameObject.GetComponent<InfiniteMovement>())
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
 
     }

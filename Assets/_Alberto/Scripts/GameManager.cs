@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Vector3 MovementDirection = new Vector3(0, 0, -1);
     public float Speed = 10;
+    public bool isGameOver;
     private float increasingSpeed = 0.5f;
     public float totalMeters;
 
@@ -17,7 +18,12 @@ public class GameManager : MonoBehaviour
 
     private void IncreaseDifficulty()
     {
-        Speed += increasingSpeed * Time.deltaTime;
+        if (!isGameOver)
+            Speed += increasingSpeed * Time.deltaTime;
+        else if (isGameOver)
+        {
+            Speed = 0;
+        }
     }
 
 }
