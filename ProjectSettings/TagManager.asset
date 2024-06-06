@@ -16,6 +16,7 @@ TagManager:
   - TrackingObject
   - Actors
   - Grabbable
+  - coin
   layers:
   - Default
   - TransparentFX

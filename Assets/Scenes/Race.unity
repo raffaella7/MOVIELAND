@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 7976296643289043775, guid: 164e98242b95b324bb7ac15ca82d78e7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.36
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7976296643289043775, guid: 164e98242b95b324bb7ac15ca82d78e7,
         type: 3}
@@ -1600,6 +1600,9 @@ MonoBehaviour:
   - {fileID: 4964204672328572169, guid: 9dcc1385d8fee4e459f94766ee38fcf5, type: 3}
   - {fileID: 8053649937076149232, guid: 89a8ea523f9b3ed469d4e6c2320860bc, type: 3}
   - {fileID: 8297891654754169069, guid: 21bc43191880bb043ac810078621d532, type: 3}
+  coinPrefab: {fileID: 8294490201146695774, guid: 66b825e5208708247a05442c0917a393,
+    type: 3}
+  CarPrefab: {fileID: 189478919}
   spawnPoint: {fileID: 1478106393}
   minDelay: 1
   maxDelay: 2

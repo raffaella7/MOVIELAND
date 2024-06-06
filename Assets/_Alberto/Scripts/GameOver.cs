@@ -9,15 +9,22 @@ public class GameOver : MonoBehaviour
     public GameObject gameOverUI;
     public TextMeshProUGUI ScoreText;
     GameManager gameManager;
+    PlayerBehaivor playerBehaivor;
 
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        playerBehaivor = FindObjectOfType<PlayerBehaivor>();
     }
     void OnTriggerEnter(Collider other)
     {
-        gameManager.isGameOver = true;
-        gameOverUI.SetActive(true);
-        ScoreText.text = $"M: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
+        if (!other.CompareTag("coin"))
+        {
+            gameManager.isGameOver = true;
+            gameOverUI.SetActive(true);
+            ScoreText.text = $"M: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
+            playerBehaivor.CanSwipe = false;
+
+        }
     }
 }

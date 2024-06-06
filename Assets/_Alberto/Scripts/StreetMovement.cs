@@ -24,8 +24,8 @@ public class StreetMovement : MonoBehaviour
         transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
         Progress += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
         gameManager.totalMeters += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
-        print(Progress);
-        print(gameManager.totalMeters);
+        // print(Progress);
+        // print(gameManager.totalMeters);
         if (Progress <= MaxPosition)
         {
             transform.position = StartPosition;

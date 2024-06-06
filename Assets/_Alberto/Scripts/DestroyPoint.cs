@@ -10,7 +10,7 @@ public class DestroyPoint : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        print("collisione");
+        // print("collisione");
         if (other.gameObject.GetComponent<InfiniteMovement>())
         {
             Destroy(other.gameObject);
