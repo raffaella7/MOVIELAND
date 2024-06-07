@@ -8,15 +8,17 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject gameOverUI;
-    public TextMeshProUGUI ScoreText;
-    public TextMeshProUGUI textCoins;
+
     GameManager gameManager;
     PlayerBehaivor playerBehaivor;
     InputManager inputManager;
+    UIManager uIManager;
+    TruckBehaviour truckBehaviour;
 
     void Awake()
     {
+        uIManager = FindAnyObjectByType<UIManager>();
+        truckBehaviour = FindAnyObjectByType<TruckBehaviour>();
         inputManager = FindAnyObjectByType<InputManager>();
         gameManager = FindObjectOfType<GameManager>();
         playerBehaivor = FindObjectOfType<PlayerBehaivor>();
@@ -25,12 +27,12 @@ public class GameOver : MonoBehaviour
     {
         if (!other.CompareTag("coin"))
         {
+            uIManager.GameOver();
             gameManager.isGameOver = true;
-            gameOverUI.SetActive(true);
-            ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
             // textCoins.text = $"Coins: {gameManager.coinCount}";
             playerBehaivor.CanSwipe = false;
             inputManager.gameObject.SetActive(false);
+            truckBehaviour.speedTruck = 0;
         }
     }
 
