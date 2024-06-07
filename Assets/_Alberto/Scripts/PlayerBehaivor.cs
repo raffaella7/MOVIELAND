@@ -5,23 +5,30 @@ using UnityEngine;
 public class PlayerBehaivor : MonoBehaviour
 {
     Animator animator;
-    private int currentLane = 1; 
-    void Awake(){
-        animator=GetComponent<Animator>();
+    [SerializeField] public int currentLane = 1;
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
     }
     public void Left()
     {
         currentLane--;
-        animator.SetInteger("CurrentLane",currentLane);
-        currentLane = Mathf.Clamp(currentLane,0,2);
+        currentLane = Mathf.Clamp(currentLane, 0, 2);
+        animator.SetInteger("CurrentLane", currentLane);
         print(currentLane);
     }
     public void Right()
     {
         currentLane++;
-        animator.SetInteger("CurrentLane",currentLane);
-        currentLane = Mathf.Clamp(currentLane,0,2);
+        currentLane = Mathf.Clamp(currentLane, 0, 2);
+        animator.SetInteger("CurrentLane", currentLane);
         print(currentLane);
     }
-    
+    public void OnRestart()
+    {
+        currentLane = 1;
+        animator.SetInteger("CurrentLane", currentLane);
+
+    }
+
 }

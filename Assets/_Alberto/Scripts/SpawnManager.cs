@@ -22,7 +22,10 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnFrequency = 10f;
 
-    private int spawnObjectNull = 6;
+    private int spawnObjectNull = 7;
+    private float delay = 10f;
+
+    private List<GameObject> spawnedObjects = new List<GameObject>();
 
     void Awake()
     {
@@ -52,6 +55,7 @@ public class SpawnManager : MonoBehaviour
         int spawnChance = Random.Range(0, 10);   //
         print("NUMERO NULLO");
 
+
         // Se il numero casuale è 6, non fare nulla
         if (spawnChance >= spawnObjectNull)     //se il nmero che esce è uguale a spawnobject null allora non fare niente se no spawna prefab
         {
@@ -61,8 +65,26 @@ public class SpawnManager : MonoBehaviour
 
         // spawna il prefab
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
+
+        spawnedObjects.Add(spawnedObject);
+
+        // Destroy(spawnedObject, delay);
     }
 
+
+    public void DestroyAllSapwnedObjects()
+    {
+        foreach (GameObject shibino in spawnedObjects)
+        {
+            if (shibino != null)
+            {
+                Destroy(shibino);
+            }
+        };
+        //devo ripulire tutta la lista
+        spawnedObjects.Clear();
+        nextSpawnAtMeters = 0;
+    }
 
 
     // IEnumerator SpawnRandom()

@@ -25,4 +25,5 @@ public class GameOver : MonoBehaviour
         ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
         inputManager.gameObject.SetActive(false);
     }
+
 }

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI coinText; // Riferimento al Text della UI
     private int coinCount = 0; // Conteggio delle monete
     public TextMeshProUGUI textMeters;
+    public GameObject gameOverUI;
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
