@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
 {
     GameManager gameManager;
     public TextMeshProUGUI coinText; // Riferimento al Text della UI
-    private int coinCount = 0; // Conteggio delle monete
+
     public TextMeshProUGUI textMeters;
+
+    public GameObject gameOverUI;
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -17,15 +19,15 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         MetersUI();
+        UIAddCoin();
     }
     public void MetersUI()
     {
         textMeters.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
     }
-    public void AddCoin()
+    public void UIAddCoin()
     {
-        coinCount++;
-        coinText.text = "Coins: " + coinCount;
+        coinText.text = "Coins: " + gameManager.coinCount;
     }
 
 }
