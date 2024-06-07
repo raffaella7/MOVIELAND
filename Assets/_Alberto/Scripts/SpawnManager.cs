@@ -33,6 +33,7 @@ public class SpawnManager : MonoBehaviour
     List<float> spawnPoints = new List<float>() { -1.4f, 0, 1.4f };
     int RandIndex;
     int lastRandIndex;
+    int[] obstacleLanes;
 
     void Start()
     {
@@ -99,8 +100,9 @@ public class SpawnManager : MonoBehaviour
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
 
         spawnedObjects.Add(spawnedObject);
+        obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lane;
 
-        // Destroy(spawnedObject, delay);
+
     }
 
 
