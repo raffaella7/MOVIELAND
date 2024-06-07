@@ -26,7 +26,10 @@ public class SpawnManager : MonoBehaviour
     private float spawnFrequency = 15f;
     private float CoinspawnFrequency = 6f;
 
-    private int spawnObjectNull = 6;
+    private int spawnObjectNull = 7;
+    private float delay = 10f;
+
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     List<float> spawnPoints = new List<float>() { -1.4f, 0, 1.4f };
     int RandIndex;
     int lastRandIndex;
@@ -95,8 +98,26 @@ public class SpawnManager : MonoBehaviour
 
         // spawna il prefab
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
+
+        spawnedObjects.Add(spawnedObject);
+
+        // Destroy(spawnedObject, delay);
     }
 
+
+    public void DestroyAllSapwnedObjects()
+    {
+        foreach (GameObject shibino in spawnedObjects)
+        {
+            if (shibino != null)
+            {
+                Destroy(shibino);
+            }
+        };
+        //devo ripulire tutta la lista
+        spawnedObjects.Clear();
+        nextSpawnAtMeters = 0;
+    }
 
 
     // IEnumerator SpawnRandom()

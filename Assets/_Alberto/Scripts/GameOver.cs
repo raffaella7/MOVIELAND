@@ -31,4 +31,5 @@ public class GameOver : MonoBehaviour
             inputManager.gameObject.SetActive(false);
         }
     }
+
 }

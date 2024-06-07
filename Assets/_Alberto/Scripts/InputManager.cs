@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
     private InputAction touch;
-    private Vector2 startedPos;
+    public Vector2 startedPos;
     private Vector2 lastPos;
     PlayerBehaivor playerBehaivor;
 

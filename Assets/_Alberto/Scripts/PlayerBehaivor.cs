@@ -28,5 +28,11 @@ public class PlayerBehaivor : MonoBehaviour
         currentLane = Mathf.Clamp(currentLane, 0, 2);
         // print(currentLane);
     }
+    public void OnRestart()
+    {
+        currentLane = 1;
+        animator.SetInteger("CurrentLane", currentLane);
+
+    }
 
 }
