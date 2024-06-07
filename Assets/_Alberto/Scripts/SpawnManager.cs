@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
 
     void Update()
     {
-        if (-gameManager.totalMeters >= nextSpawnAtMeters) //checko se effettivamente è il momento giusto per spawnare
+        if (-gameManager.totalMeters > nextSpawnAtMeters) //checko se effettivamente è il momento giusto per spawnare
         {
             SpawnPrefab(obstaclePrefabs);   //spawna
             nextSpawnAtMeters += spawnFrequency;       //aggiungo 10 metri
@@ -92,10 +92,6 @@ public class SpawnManager : MonoBehaviour
         {
             return;
         }
-
-
-
-
         int randomIndex = Random.Range(0, prefabs.Length);
 
         // spawna il prefab

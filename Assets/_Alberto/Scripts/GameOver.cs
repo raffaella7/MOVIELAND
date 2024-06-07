@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
@@ -10,9 +12,11 @@ public class GameOver : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     GameManager gameManager;
     PlayerBehaivor playerBehaivor;
+    InputManager inputManager;
 
     void Awake()
     {
+        inputManager = FindAnyObjectByType<InputManager>();
         gameManager = FindObjectOfType<GameManager>();
         playerBehaivor = FindObjectOfType<PlayerBehaivor>();
     }
@@ -22,9 +26,9 @@ public class GameOver : MonoBehaviour
         {
             gameManager.isGameOver = true;
             gameOverUI.SetActive(true);
-            ScoreText.text = $"M: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
+            ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
             playerBehaivor.CanSwipe = false;
-
+            inputManager.gameObject.SetActive(false);
         }
     }
 }
