@@ -78,7 +78,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], 0, CarPrefab.transform.GetChild(0).transform.position.z + 8), spawnPoint.rotation);
+        Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], 0, CarPrefab.transform.GetChild(0).transform.position.z + 8), Quaternion.identity);
     }
 
     void SpawnPrefab(GameObject[] prefabs)
