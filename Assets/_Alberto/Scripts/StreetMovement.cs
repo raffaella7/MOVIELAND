@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StreetMovement : MonoBehaviour
 {
-    private float MaxPosition = -17.4f;
+    [SerializeField] float MaxPosition = -17.4f;
     private float Progress;
     GameManager gameManager;
 

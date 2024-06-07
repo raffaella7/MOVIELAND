@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     InputManager inputManager;
     PlayerBehaivor playerBehaivor;
-    private float increasingSpeed = 0.2f;
+    public float increasingSpeed = 0.2f;
     SpawnManager spawnManager;
     public int coinCount = 0; // Conteggio delle monete
 
