@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,13 +25,13 @@ public class SpawnManager : MonoBehaviour
     private float CoinnextSpawnAtMeters = 5; // tengo traccia dei metri percorsi
 
     private float spawnFrequency = 15f;
-    private float CoinspawnFrequency = 3f;
+    private float CoinspawnFrequency = 4f;
 
-    private int spawnObjectNull = 9;
+    private int spawnObjectNull = 8;
     private float delay = 10f;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
-    List<float> spawnPoints = new List<float>() { -1.4f, 0, 1.4f };
+    List<float> spawnPoints = new() { -1.4f, 0, 1.4f };
     int RandIndex;
     int lastRandIndex;
     int[] obstacleLanes;
@@ -41,49 +42,23 @@ public class SpawnManager : MonoBehaviour
     {
         RandIndex = Random.Range(0, spawnPoints.Count);
         StartCoroutine(EnableCoinSpawn());
-
     }
 
     void Awake()
     {
         // Trova il GameManager nella scena
         gameManager = FindObjectOfType<GameManager>();
-        // StartCoroutine(RandomizeLaneCoin());
-
     }
 
     void Update()
     {
         if (obstacleLanes != null)
-        {
-            if (System.Array.FindAll(obstacleLanes, lane => lane == 0).Length == 1)
-            {
-                RandIndex = System.Array.FindIndex(obstacleLanes, lane => lane == 0);
-            }
-            else if (System.Array.FindAll(obstacleLanes, lane => lane == 0).Length == 2)
-            {
-                List<int> indexes = new List<int>();
-                foreach (int lane in obstacleLanes)
-                {
-                    if (lane == 0)
-                    {
-                        indexes.Add(System.Array.IndexOf(obstacleLanes, lane));
-                    }
-                }
-                RandIndex = indexes[Random.Range(0, indexes.Count)];
-            }
-            else
-            {
-                RandIndex = Random.Range(0, obstacleLanes.Length);
-            }
-        }
-
+            RandIndex = System.Array.FindIndex(obstacleLanes, lane => lane == 0);
         if (-gameManager.totalMeters > nextSpawnAtMeters)
         {
             SpawnPrefab(obstaclePrefabs);
             nextSpawnAtMeters += spawnFrequency;
         }
-
         if (canCoinsSpawn)
         {
             CoinsSpawnDelay = 2;

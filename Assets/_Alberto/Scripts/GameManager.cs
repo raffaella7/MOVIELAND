@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         IncreaseSpeed();
-        print(Speed);
+        // print(Speed);
     }
 
     private void IncreaseSpeed()
