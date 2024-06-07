@@ -17,6 +17,7 @@ TagManager:
   - Actors
   - Grabbable
   - coin
+  - Truck
   layers:
   - Default
   - TransparentFX
