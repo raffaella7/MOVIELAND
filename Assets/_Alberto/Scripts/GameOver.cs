@@ -28,7 +28,7 @@ public class GameOver : MonoBehaviour
             gameManager.isGameOver = true;
             gameOverUI.SetActive(true);
             ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
-            textCoins.text = $"Coins: {gameManager.coinCount}";
+            // textCoins.text = $"Coins: {gameManager.coinCount}";
             playerBehaivor.CanSwipe = false;
             inputManager.gameObject.SetActive(false);
         }

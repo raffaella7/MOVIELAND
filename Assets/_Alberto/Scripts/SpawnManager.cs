@@ -24,61 +24,91 @@ public class SpawnManager : MonoBehaviour
     private float CoinnextSpawnAtMeters = 5; // tengo traccia dei metri percorsi
 
     private float spawnFrequency = 15f;
-    private float CoinspawnFrequency = 6f;
+    private float CoinspawnFrequency = 3f;
 
-    private int spawnObjectNull = 7;
+    private int spawnObjectNull = 9;
     private float delay = 10f;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
     List<float> spawnPoints = new List<float>() { -1.4f, 0, 1.4f };
     int RandIndex;
     int lastRandIndex;
+    int[] obstacleLanes;
+    bool canCoinsSpawn = true;
+    int CoinsSpawnDelay;
 
     void Start()
     {
         RandIndex = Random.Range(0, spawnPoints.Count);
+        StartCoroutine(EnableCoinSpawn());
+
     }
 
     void Awake()
     {
         // Trova il GameManager nella scena
         gameManager = FindObjectOfType<GameManager>();
-        StartCoroutine(RandomizeLaneCoin());
+        // StartCoroutine(RandomizeLaneCoin());
 
     }
 
     void Update()
     {
-        if (-gameManager.totalMeters > nextSpawnAtMeters) //checko se effettivamente è il momento giusto per spawnare
+        if (obstacleLanes != null)
         {
-            SpawnPrefab(obstaclePrefabs);   //spawna
-            nextSpawnAtMeters += spawnFrequency;       //aggiungo 10 metri
-
+            if (System.Array.FindAll(obstacleLanes, lane => lane == 0).Length == 1)
+            {
+                RandIndex = System.Array.FindIndex(obstacleLanes, lane => lane == 0);
+            }
+            else if (System.Array.FindAll(obstacleLanes, lane => lane == 0).Length == 2)
+            {
+                List<int> indexes = new List<int>();
+                foreach (int lane in obstacleLanes)
+                {
+                    if (lane == 0)
+                    {
+                        indexes.Add(System.Array.IndexOf(obstacleLanes, lane));
+                    }
+                }
+                RandIndex = indexes[Random.Range(0, indexes.Count)];
+            }
+            else
+            {
+                RandIndex = Random.Range(0, obstacleLanes.Length);
+            }
         }
-        if (-gameManager.totalMeters >= CoinnextSpawnAtMeters) //checko se effettivamente è il momento giusto per spawnare
+
+        if (-gameManager.totalMeters > nextSpawnAtMeters)
         {
-            SpawnCoin();   //spawna
-            CoinnextSpawnAtMeters += CoinspawnFrequency;       //aggiungo 10 metri
+            SpawnPrefab(obstaclePrefabs);
+            nextSpawnAtMeters += spawnFrequency;
         }
 
-
+        if (canCoinsSpawn)
+        {
+            CoinsSpawnDelay = 2;
+            if (-gameManager.totalMeters >= CoinnextSpawnAtMeters)
+            {
+                SpawnCoin();
+                CoinnextSpawnAtMeters += CoinspawnFrequency;
+            }
+        }
+        else
+        {
+            CoinsSpawnDelay = 4;
+        }
     }
 
-    IEnumerator RandomizeLaneCoin()
+    IEnumerator EnableCoinSpawn()
     {
-        yield return new WaitForSeconds(Random.Range(2, 3));
-        RandIndex = Random.Range(0, 3);
-        while (RandIndex == lastRandIndex)
-        {
-            RandIndex = Random.Range(0, 3);
-        }
-        lastRandIndex = RandIndex;
-        StartCoroutine(RandomizeLaneCoin());
+        yield return new WaitForSeconds(CoinsSpawnDelay);
+        canCoinsSpawn = !canCoinsSpawn;
+        StartCoroutine(EnableCoinSpawn());
     }
 
     void SpawnCoin()
     {
-        GameObject spawnedObject = Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], .5f, CarPrefab.transform.GetChild(0).transform.position.z + 32), coinPrefab.transform.rotation);
+        GameObject spawnedObject = Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], .5f, CarPrefab.transform.GetChild(0).transform.position.z + 25), coinPrefab.transform.rotation);
         spawnedObjects.Add(spawnedObject);
     }
 
@@ -94,13 +124,20 @@ public class SpawnManager : MonoBehaviour
             return;
         }
         int randomIndex = Random.Range(0, prefabs.Length);
+        while (randomIndex == lastRandIndex)
+        {
+            randomIndex = Random.Range(0, prefabs.Length);
+        }
+        lastRandIndex = randomIndex;
 
         // spawna il prefab
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
 
         spawnedObjects.Add(spawnedObject);
+        obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lanes;
+        // print($"{RandIndex} - {obstacleLanes[0]} {obstacleLanes[1]} {obstacleLanes[2]}");
 
-        // Destroy(spawnedObject, delay);
+
     }
 
 
@@ -118,26 +155,4 @@ public class SpawnManager : MonoBehaviour
         nextSpawnAtMeters = 0;
         CoinnextSpawnAtMeters = 5;
     }
-
-
-    // IEnumerator SpawnRandom()
-    // {
-    //     // loop infinito per continuare a spawnare oggetti
-    //     while (true)
-    //     {
-    //         // casualmente mi prendo il ritardo per lo spawn
-    //         float delay = Random.Range(minDelay, maxDelay);
-    //         yield return new WaitForSeconds(delay);
-
-    //         // randomicamente spawna o un ostacolo o una moneta
-    //         bool spawnObstacle = Random.value > 0.5f;
-
-    //         if (spawnObstacle && obstaclePrefabs.Length > 0)
-    //         {
-    //             // SPAWNA un ostacolo
-    //             SpawnPrefab(obstaclePrefabs);
-    //         }
-    //     }
-    // }
-
 }

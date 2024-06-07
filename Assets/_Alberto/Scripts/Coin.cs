@@ -13,6 +13,12 @@ public class Coin : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+    void Update()
+    {
+        // Ruota la moneta
+        transform.Rotate(100 * Time.deltaTime * Vector3.up);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) // Assicurati che il player abbia il tag "Player"
