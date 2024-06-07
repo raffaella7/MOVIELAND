@@ -6,7 +6,7 @@ using UnityEngine;
 public class TruckBehaviour : MonoBehaviour
 {
     GameManager gameManager;
-    private float speedTruck = 10f;
+    public float speedTruck = 10f;
 
     void Awake()
     {
