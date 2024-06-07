@@ -16,6 +16,7 @@ public class InfiniteMovement : MonoBehaviour
     }
     void MoveObject()
     {
+        // Usa la variabile 'speed' per la velocità
         transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
     }
 }
