@@ -5,5 +5,5 @@ using UnityEngine;
 public class ObstacleLaneInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int[] lane;
+    public int[] lanes;
 }

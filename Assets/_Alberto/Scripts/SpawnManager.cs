@@ -100,7 +100,7 @@ public class SpawnManager : MonoBehaviour
         GameObject spawnedObject = Instantiate(prefabs[randomIndex], spawnPoint.position, spawnPoint.rotation);
 
         spawnedObjects.Add(spawnedObject);
-        obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lane;
+        obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lanes;
 
 
     }
