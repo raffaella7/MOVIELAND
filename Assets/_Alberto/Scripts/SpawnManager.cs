@@ -24,14 +24,13 @@ public class SpawnManager : MonoBehaviour
     private float nextSpawnAtMeters; // tengo traccia dei metri percorsi
     private float CoinnextSpawnAtMeters = 5; // tengo traccia dei metri percorsi
 
-    private float spawnFrequency = 15f;
-    private float CoinspawnFrequency = 4f;
+    private readonly float spawnFrequency = 15f;
+    private readonly float CoinspawnFrequency = 4f;
 
-    private int spawnObjectNull = 8;
-    private float delay = 10f;
+    private readonly int spawnObjectNull = 8;
 
-    private List<GameObject> spawnedObjects = new List<GameObject>();
-    List<float> spawnPoints = new() { -1.4f, 0, 1.4f };
+    private List<GameObject> spawnedObjects = new();
+    readonly List<float> spawnPoints = new() { -1.4f, 0, 1.4f };
     int RandIndex;
     int lastRandIndex;
     int[] obstacleLanes;
@@ -40,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        RandIndex = Random.Range(0, spawnPoints.Count);
+        // RandIndex = Random.Range(0, spawnPoints.Count);
         StartCoroutine(EnableCoinSpawn());
     }
 
@@ -110,7 +109,7 @@ public class SpawnManager : MonoBehaviour
 
         spawnedObjects.Add(spawnedObject);
         obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lanes;
-        // print($"{RandIndex} - {obstacleLanes[0]} {obstacleLanes[1]} {obstacleLanes[2]}");
+        print($"{RandIndex} - {obstacleLanes[0]} {obstacleLanes[1]} {obstacleLanes[2]}");
 
 
     }
