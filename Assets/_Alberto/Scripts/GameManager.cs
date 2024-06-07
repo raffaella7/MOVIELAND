@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     InputManager inputManager;
     PlayerBehaivor playerBehaivor;
-    private float increasingSpeed = 0.5f;
+    private float increasingSpeed = 0.2f;
     SpawnManager spawnManager;
     public int coinCount = 0; // Conteggio delle monete
 
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         IncreaseSpeed();
+        print(Speed);
     }
 
     private void IncreaseSpeed()
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
             StartUI.SetActive(false);
             GameUI.SetActive(true);
             Speed += increasingSpeed * Time.deltaTime;
+            Speed = Mathf.Clamp(Speed, 0, 20);
         }
         else if (isGameOver)
         {
