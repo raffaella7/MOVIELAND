@@ -2619,7 +2619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 0}
-  textMeters: {fileID: 179085537}
+  textMeters: {fileID: 0}
 --- !u!1 &1478106388
 GameObject:
   m_ObjectHideFlags: 0

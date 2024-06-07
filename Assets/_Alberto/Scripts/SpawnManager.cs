@@ -58,7 +58,6 @@ public class SpawnManager : MonoBehaviour
         {
             SpawnCoin();   //spawna
             CoinnextSpawnAtMeters += CoinspawnFrequency;       //aggiungo 10 metri
-
         }
 
 

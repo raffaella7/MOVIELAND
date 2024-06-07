@@ -25,63 +25,54 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void OnEnable()
     {
-        void OnEnable()
-        {
-            touch.started += TouchPos1;
-            touch.performed += TouchPos2;
-            touch.canceled += TouchPos3;
-        }
+        touch.started += TouchPos1;
+        touch.performed += TouchPos2;
+        touch.canceled += TouchPos3;
+    }
 
-        void TouchPos1(InputAction.CallbackContext context)
+
+    void TouchPos1(InputAction.CallbackContext context)
+    {
+        startedPos = context.ReadValue<Vector2>();
+        // print(startedPos);
+    }
+
+    void TouchPos2(InputAction.CallbackContext context)
+    {
+        lastPos = context.ReadValue<Vector2>();
+        // print(lastPos);
+    }
+    void TouchPos3(InputAction.CallbackContext context)
+
+    {
+        SwipeDirection();
+    }
+
+
+    void SwipeDirection()
+    {
+        float x = lastPos.x - startedPos.x;
+        float y = lastPos.y - startedPos.y;
+
+        if (Mathf.Abs(x) > Mathf.Abs(y))
         {
-            startedPos = context.ReadValue<Vector2>();
-            void TouchPos1(InputAction.CallbackContext context)
+            if (x < 0)
             {
-                startedPos = context.ReadValue<Vector2>();
-                // print(startedPos);
+                playerBehaivor.Left();
+                // print("swipe left");
             }
-            void TouchPos2(InputAction.CallbackContext context)
+            else if (x > 0)
             {
-                lastPos = context.ReadValue<Vector2>();
-                void TouchPos2(InputAction.CallbackContext context)
-                {
-                    lastPos = context.ReadValue<Vector2>();
-                    // print(lastPos);
-                }
-                void TouchPos3(InputAction.CallbackContext context)
-
-                {
-                    SwipeDirection();
-                }
-
-                void SwipeDirection()
-                {
-                    float x = lastPos.x - startedPos.x;
-                    float y = lastPos.y - startedPos.y;
-                    void SwipeDirection()
-                    {
-                        float x = lastPos.x - startedPos.x;
-                        float y = lastPos.y - startedPos.y;
-
-                        if (Mathf.Abs(x) > Mathf.Abs(y))
-                        {
-                            if (x < 0)
-                            {
-                                playerBehaivor.Left();
-                                // print("swipe left");
-                            }
-                            else if (x > 0)
-                            {
-                                playerBehaivor.Right();
-                                // print("swipe right");
-                            }
-                        }
-                        // else
-                        // {
-                        // if (y < 0)
-                        // print("swipe down");
-                        // else if (y > 0)
-                        // print("swipe up");
-                        // }
-                    }
-                }
+                playerBehaivor.Right();
+                // print("swipe right");
+            }
+        }
+        // else
+        // {
+        // if (y < 0)
+        // print("swipe down");
+        // else if (y > 0)
+        // print("swipe up");
+        // }
+    }
+}
