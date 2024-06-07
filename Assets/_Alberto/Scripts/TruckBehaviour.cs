@@ -6,7 +6,7 @@ using UnityEngine;
 public class TruckBehaviour : MonoBehaviour
 {
     GameManager gameManager;
-
+    private float speedTruck = 10f;
 
     void Awake()
     {
@@ -18,7 +18,15 @@ public class TruckBehaviour : MonoBehaviour
     }
     void MoveObject()
     {
-        // Usa la variabile 'speed' per la velocità
-        transform.Translate(gameManager.MovementDirection * Time.deltaTime * (gameManager.Speed + 5f));
+        transform.Translate(gameManager.MovementDirection * Time.deltaTime * (gameManager.Speed + speedTruck));
+    }
+
+    void OnTriggerEnter(Collider other)
+
+    {
+        if (other.gameObject.GetComponent<InfiniteMovement>())
+        {
+            speedTruck = 0;
+        }
     }
 }
