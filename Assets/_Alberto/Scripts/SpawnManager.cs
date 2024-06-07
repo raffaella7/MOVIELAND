@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour
     private GameManager gameManager;
 
     private float nextSpawnAtMeters; // tengo traccia dei metri percorsi
-    private float CoinnextSpawnAtMeters; // tengo traccia dei metri percorsi
+    private float CoinnextSpawnAtMeters = 5; // tengo traccia dei metri percorsi
 
     private float spawnFrequency = 15f;
     private float CoinspawnFrequency = 6f;
@@ -34,18 +34,16 @@ public class SpawnManager : MonoBehaviour
     int RandIndex;
     int lastRandIndex;
 
+    void Start()
+    {
+        RandIndex = Random.Range(0, spawnPoints.Count);
+    }
+
     void Awake()
     {
         // Trova il GameManager nella scena
         gameManager = FindObjectOfType<GameManager>();
         StartCoroutine(RandomizeLaneCoin());
-
-    }
-
-
-    void Start()
-    {
-
 
     }
 
@@ -69,10 +67,10 @@ public class SpawnManager : MonoBehaviour
     IEnumerator RandomizeLaneCoin()
     {
         yield return new WaitForSeconds(Random.Range(2, 3));
-        RandIndex = Random.Range(0, spawnPoints.Count);
+        RandIndex = Random.Range(0, 3);
         while (RandIndex == lastRandIndex)
         {
-            RandIndex = Random.Range(0, spawnPoints.Count);
+            RandIndex = Random.Range(0, 3);
         }
         lastRandIndex = RandIndex;
         StartCoroutine(RandomizeLaneCoin());
@@ -80,7 +78,8 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], 0, CarPrefab.transform.GetChild(0).transform.position.z + 32), coinPrefab.transform.rotation);
+        GameObject spawnedObject = Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], .5f, CarPrefab.transform.GetChild(0).transform.position.z + 32), coinPrefab.transform.rotation);
+        spawnedObjects.Add(spawnedObject);
     }
 
     void SpawnPrefab(GameObject[] prefabs)
@@ -117,6 +116,7 @@ public class SpawnManager : MonoBehaviour
         //devo ripulire tutta la lista
         spawnedObjects.Clear();
         nextSpawnAtMeters = 0;
+        CoinnextSpawnAtMeters = 5;
     }
 
 

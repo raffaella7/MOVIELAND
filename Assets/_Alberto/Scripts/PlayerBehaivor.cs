@@ -32,6 +32,8 @@ public class PlayerBehaivor : MonoBehaviour
     {
         currentLane = 1;
         animator.SetInteger("CurrentLane", currentLane);
+        CanSwipe = true;
+
 
     }
 
