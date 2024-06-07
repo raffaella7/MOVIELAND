@@ -5,29 +5,35 @@ using UnityEngine;
 public class PlayerBehaivor : MonoBehaviour
 {
     Animator animator;
-    [SerializeField] public int currentLane = 1;
+    private int currentLane = 1;
+    public bool CanSwipe = true;
     void Awake()
     {
         animator = GetComponent<Animator>();
     }
     public void Left()
     {
+        if (!CanSwipe) return;
         currentLane--;
-        currentLane = Mathf.Clamp(currentLane, 0, 2);
         animator.SetInteger("CurrentLane", currentLane);
-        print(currentLane);
+        currentLane = Mathf.Clamp(currentLane, 0, 2);
+        // print(currentLane);
+
     }
     public void Right()
     {
+        if (!CanSwipe) return;
         currentLane++;
-        currentLane = Mathf.Clamp(currentLane, 0, 2);
         animator.SetInteger("CurrentLane", currentLane);
-        print(currentLane);
+        currentLane = Mathf.Clamp(currentLane, 0, 2);
+        // print(currentLane);
     }
     public void OnRestart()
     {
         currentLane = 1;
         animator.SetInteger("CurrentLane", currentLane);
+        CanSwipe = true;
+
 
     }
 

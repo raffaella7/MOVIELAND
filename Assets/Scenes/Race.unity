@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 179085538}
   - component: {fileID: 179085537}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +817,7 @@ PrefabInstance:
     - target: {fileID: 7976296643289043775, guid: 164e98242b95b324bb7ac15ca82d78e7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.36
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7976296643289043775, guid: 164e98242b95b324bb7ac15ca82d78e7,
         type: 3}
@@ -5564,7 +5564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b8fe37b231e5744bdb53be33ddd27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
+  coinText: {fileID: 1516005764}
   textMeters: {fileID: 179085537}
   gameOverUI: {fileID: 153582782}
 --- !u!1 &1478106388
@@ -5606,6 +5606,9 @@ MonoBehaviour:
   - {fileID: 4964204672328572169, guid: 9dcc1385d8fee4e459f94766ee38fcf5, type: 3}
   - {fileID: 8053649937076149232, guid: 89a8ea523f9b3ed469d4e6c2320860bc, type: 3}
   - {fileID: 8297891654754169069, guid: 21bc43191880bb043ac810078621d532, type: 3}
+  coinPrefab: {fileID: 8294490201146695774, guid: 66b825e5208708247a05442c0917a393,
+    type: 3}
+  CarPrefab: {fileID: 189478919}
   spawnPoint: {fileID: 1478106393}
   minDelay: 1
   maxDelay: 2
@@ -6119,7 +6122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1590475885
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7403,6 +7406,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 179085536}
+  - {fileID: 1516005763}
   m_Father: {fileID: 133230206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -18,6 +18,13 @@ public class GameManager : MonoBehaviour
     PlayerBehaivor playerBehaivor;
     private float increasingSpeed = 0.5f;
     SpawnManager spawnManager;
+    public int coinCount = 0; // Conteggio delle monete
+
+    public void AddCoin()
+    {
+        coinCount++;
+    }
+
     void Awake()
     {
         spawnManager = FindObjectOfType<SpawnManager>();
@@ -55,6 +62,7 @@ public class GameManager : MonoBehaviour
         playerBehaivor.OnRestart();
         totalMeters = 0;
         spawnManager.DestroyAllSapwnedObjects();
+        coinCount = 0;
     }
     public void Exit()
     {
