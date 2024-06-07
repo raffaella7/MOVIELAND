@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     private float CoinnextSpawnAtMeters; // tengo traccia dei metri percorsi
 
     private float spawnFrequency = 15f;
-    private float CoinspawnFrequency = 4f;
+    private float CoinspawnFrequency = 6f;
 
     private int spawnObjectNull = 6;
     List<float> spawnPoints = new List<float>() { -1.4f, 0, 1.4f };
@@ -66,7 +66,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator RandomizeLaneCoin()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(Random.Range(2, 3));
         RandIndex = Random.Range(0, spawnPoints.Count);
         while (RandIndex == lastRandIndex)
         {
@@ -78,7 +78,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnCoin()
     {
-        Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], 0, CarPrefab.transform.GetChild(0).transform.position.z + 8), Quaternion.identity);
+        Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], 0, CarPrefab.transform.GetChild(0).transform.position.z + 32), coinPrefab.transform.rotation);
     }
 
     void SpawnPrefab(GameObject[] prefabs)
