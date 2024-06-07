@@ -14,7 +14,11 @@ public class TruckBehaviour : MonoBehaviour
     }
     void Update()
     {
-        MoveObject();
+        if (!gameManager.isGameOver)
+        {
+            MoveObject();
+        }
+
     }
     void MoveObject()
     {
@@ -24,7 +28,7 @@ public class TruckBehaviour : MonoBehaviour
     void OnTriggerEnter(Collider other)
 
     {
-        if (other.gameObject.GetComponent<InfiniteMovement>())
+        if (other.gameObject.GetComponent<InfiniteMovement>() || other.CompareTag("Player"))
         {
             speedTruck = 0;
         }

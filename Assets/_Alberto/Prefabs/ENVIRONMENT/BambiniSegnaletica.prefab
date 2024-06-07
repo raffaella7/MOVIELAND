@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2079966171350440440}
   - component: {fileID: 1258584155521286905}
   - component: {fileID: 8454620171508903115}
+  - component: {fileID: 6695202450180719417}
   m_Layer: 0
   m_Name: sign children ahead
   m_TagString: Untagged
@@ -108,6 +109,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3793282160787742441, guid: 6509a15e7c4c37643901802526df353d, type: 3}
+--- !u!114 &6695202450180719417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720548917866370496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f98e22c4633a8a42847c9f7769a6108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1482844364432124145
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +133,7 @@ GameObject:
   - component: {fileID: 8968939264734613731}
   - component: {fileID: 399965862882365173}
   - component: {fileID: 8589438568033128083}
+  - component: {fileID: 7703600788469455242}
   m_Layer: 0
   m_Name: BambiniSegnaletica
   m_TagString: Untagged
@@ -215,3 +229,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6022013735318620646, guid: 6509a15e7c4c37643901802526df353d, type: 3}
+--- !u!114 &7703600788469455242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482844364432124145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f98e22c4633a8a42847c9f7769a6108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
