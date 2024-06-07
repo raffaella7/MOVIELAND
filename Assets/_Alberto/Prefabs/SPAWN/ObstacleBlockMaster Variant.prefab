@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc3437de768c3e4c8e9babb894cf170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lane: 010000000000000000000000
+  lanes: 010000000000000000000000
 --- !u!4 &5297529358246209472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7904404315145533449, guid: 66bc5b4f9183099419b007a3a3c65498,

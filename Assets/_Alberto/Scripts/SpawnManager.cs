@@ -44,12 +44,14 @@ public class SpawnManager : MonoBehaviour
     {
         // Trova il GameManager nella scena
         gameManager = FindObjectOfType<GameManager>();
-        StartCoroutine(RandomizeLaneCoin());
+        // StartCoroutine(RandomizeLaneCoin());
 
     }
 
     void Update()
     {
+        if (obstacleLanes != null)
+            RandIndex = System.Array.FindIndex(obstacleLanes, lane => lane == 0);
         if (-gameManager.totalMeters > nextSpawnAtMeters) //checko se effettivamente è il momento giusto per spawnare
         {
             SpawnPrefab(obstaclePrefabs);   //spawna
@@ -65,21 +67,9 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    IEnumerator RandomizeLaneCoin()
-    {
-        yield return new WaitForSeconds(Random.Range(2, 3));
-        RandIndex = Random.Range(0, 3);
-        while (RandIndex == lastRandIndex)
-        {
-            RandIndex = Random.Range(0, 3);
-        }
-        lastRandIndex = RandIndex;
-        StartCoroutine(RandomizeLaneCoin());
-    }
-
     void SpawnCoin()
     {
-        GameObject spawnedObject = Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], .5f, CarPrefab.transform.GetChild(0).transform.position.z + 32), coinPrefab.transform.rotation);
+        GameObject spawnedObject = Instantiate(coinPrefab, new Vector3(spawnPoints[RandIndex], .5f, CarPrefab.transform.GetChild(0).transform.position.z + 25), coinPrefab.transform.rotation);
         spawnedObjects.Add(spawnedObject);
     }
 
@@ -101,6 +91,7 @@ public class SpawnManager : MonoBehaviour
 
         spawnedObjects.Add(spawnedObject);
         obstacleLanes = spawnedObject.GetComponent<ObstacleLaneInfo>().lanes;
+        // print($"{RandIndex} - {obstacleLanes[0]} {obstacleLanes[1]} {obstacleLanes[2]}");
 
 
     }
@@ -120,26 +111,4 @@ public class SpawnManager : MonoBehaviour
         nextSpawnAtMeters = 0;
         CoinnextSpawnAtMeters = 5;
     }
-
-
-    // IEnumerator SpawnRandom()
-    // {
-    //     // loop infinito per continuare a spawnare oggetti
-    //     while (true)
-    //     {
-    //         // casualmente mi prendo il ritardo per lo spawn
-    //         float delay = Random.Range(minDelay, maxDelay);
-    //         yield return new WaitForSeconds(delay);
-
-    //         // randomicamente spawna o un ostacolo o una moneta
-    //         bool spawnObstacle = Random.value > 0.5f;
-
-    //         if (spawnObstacle && obstaclePrefabs.Length > 0)
-    //         {
-    //             // SPAWNA un ostacolo
-    //             SpawnPrefab(obstaclePrefabs);
-    //         }
-    //     }
-    // }
-
 }

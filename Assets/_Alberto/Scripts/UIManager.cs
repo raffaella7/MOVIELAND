@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     }
     public void UIAddCoin()
     {
-        coinText.text = "Coins: " + gameManager.coinCount;
+        // coinText.text = "Coins: " + gameManager.coinCount;
     }
 
 }

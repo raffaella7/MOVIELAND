@@ -16,6 +16,6 @@ public class InfiniteMovement : MonoBehaviour
     }
     void MoveObject()
     {
-        transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
+        transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed, Space.World);
     }
 }
