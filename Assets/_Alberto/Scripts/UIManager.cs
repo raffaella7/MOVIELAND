@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 
 {
     GameManager gameManager;
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI totalCoin;
     public TextMeshProUGUI coinText; // Riferimento al Text della UI
 
     public TextMeshProUGUI textMeters;
@@ -27,7 +29,13 @@ public class UIManager : MonoBehaviour
     }
     public void UIAddCoin()
     {
-        // coinText.text = "Coins: " + gameManager.coinCount;
+        coinText.text = "Coins: " + gameManager.coinCount;
+    }
+    public void GameOver()
+    {
+        gameOverUI.SetActive(true);
+        ScoreText.text = $"Meters: {Mathf.Round(Mathf.Abs(gameManager.totalMeters))}";
+        totalCoin.text = $"Coin: {Mathf.Round(Mathf.Abs(gameManager.coinCount))}";
     }
 
 }
