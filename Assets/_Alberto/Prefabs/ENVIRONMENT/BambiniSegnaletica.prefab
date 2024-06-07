@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2079966171350440440}
   - component: {fileID: 1258584155521286905}
   - component: {fileID: 8454620171508903115}
-  - component: {fileID: 6695202450180719417}
+  - component: {fileID: 9109854991315252419}
   m_Layer: 0
   m_Name: sign children ahead
   m_TagString: Untagged
@@ -109,7 +109,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3793282160787742441, guid: 6509a15e7c4c37643901802526df353d, type: 3}
---- !u!114 &6695202450180719417
+--- !u!114 &9109854991315252419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,9 +118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 720548917866370496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f98e22c4633a8a42847c9f7769a6108, type: 3}
+  m_Script: {fileID: 11500000, guid: e4b77c58d3bfcd145a443c9f504da0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxPosition: -17.4
 --- !u!1 &1482844364432124145
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ GameObject:
   - component: {fileID: 8968939264734613731}
   - component: {fileID: 399965862882365173}
   - component: {fileID: 8589438568033128083}
-  - component: {fileID: 7703600788469455242}
+  - component: {fileID: -2081404214015030594}
   m_Layer: 0
   m_Name: BambiniSegnaletica
   m_TagString: Untagged
@@ -229,7 +230,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6022013735318620646, guid: 6509a15e7c4c37643901802526df353d, type: 3}
---- !u!114 &7703600788469455242
+--- !u!114 &-2081404214015030594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,6 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482844364432124145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f98e22c4633a8a42847c9f7769a6108, type: 3}
+  m_Script: {fileID: 11500000, guid: e4b77c58d3bfcd145a443c9f504da0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxPosition: -17.4

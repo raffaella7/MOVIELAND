@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         IncreaseSpeed();
         print(Speed);
     }

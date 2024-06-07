@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StreetMovement : MonoBehaviour
+public class EnvMovement : MonoBehaviour
 {
     [SerializeField] float MaxPosition = -17.4f;
     private float Progress;
@@ -25,8 +25,7 @@ public class StreetMovement : MonoBehaviour
         {
             transform.Translate(gameManager.MovementDirection * Time.deltaTime * gameManager.Speed);
             Progress += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
-            gameManager.totalMeters += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
-            print(gameManager.totalMeters);
+            // gameManager.totalMeters += gameManager.MovementDirection.z * Time.deltaTime * gameManager.Speed;
             if (Progress <= MaxPosition)
             {
                 transform.position = StartPosition;
